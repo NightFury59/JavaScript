@@ -15,7 +15,7 @@ function smallestDifference(arrayOne, arrayTwo) {
       pairs = [arrayOne[pOne], arrayTwo[pTwo]];
     }
 
-    (arrayOne[pOne] > arrayTwo[pTwo]) ? pTwo++ : pOne;
+    (arrayOne[pOne] > arrayTwo[pTwo]) ? pTwo++ : pOne++;
   }
   return pairs;
 }
