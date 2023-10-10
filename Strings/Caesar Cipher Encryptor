@@ -1,0 +1,11 @@
+function caesarCipherEncryptor(string, key) {
+  var StrArr = [];
+  for (let i = 0; i < string.length; i++) {
+    var charCode = (string.charCodeAt(i) - 97 + key) % 26;
+    StrArr.push(String.fromCharCode(charCode + 97));
+  }
+
+  return StrArr.join('');
+}
+
+exports.caesarCipherEncryptor = caesarCipherEncryptor;
