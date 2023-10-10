@@ -1,0 +1,19 @@
+function twoNumberSum(array, targetSum) {
+  // Keep track of the number we've seen while iterating over the array
+  // We will use a set so we can check whether a given number has been seen
+  const seen = new Set();
+  for (let num of array) {
+    // Complement is the number that will sum up to target when added to the current number
+    const complement = targetSum - num;
+    // If we've seen the complement before then we have a pair of number summing up to target
+    if (seen.has(complement)) {
+      return [num, complement];
+    }
+    // Mark the number as seen
+    seen.add(num);
+  }
+    return [];
+}
+
+
+exports.twoNumberSum = twoNumberSum;
