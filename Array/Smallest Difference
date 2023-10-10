@@ -1,0 +1,24 @@
+function smallestDifference(arrayOne, arrayTwo) {
+  arrayOne.sort((a, b) => a - b);
+  arrayTwo.sort((a, b) => a - b);
+
+  let smallest = 9999999999999;
+  let pairs = [];
+  let pOne = 0;
+  let pTwo = 0;
+
+  while (pOne < arrayOne.length && pTwo < arrayTwo.length) {
+    var tempSum = Math.abs(arrayOne[pOne] - arrayTwo[pTwo]);
+
+    if (tempSum < smallest) {
+      smallest = tempSum;
+      pairs = [arrayOne[pOne], arrayTwo[pTwo]];
+    }
+
+    (arrayOne[pOne] > arrayTwo[pTwo]) ? pTwo++ : pOne++;
+  }
+  return pairs;
+}
+
+
+exports.smallestDifference = smallestDifference;
