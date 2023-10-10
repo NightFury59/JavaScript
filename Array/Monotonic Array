@@ -1,0 +1,23 @@
+function isMonotonic(array) {
+  let increasing = true;
+  let decreasing = true;
+
+  for (let i = 1; i < array.length; i++) {
+    if (isIncreasing(array[i], array[i - 1])) decreasing = false;
+    if (isDecreasing(array[i], array[i - 1])) increasing = false;
+  }
+
+  return increasing || decreasing;
+}
+
+function isIncreasing(a, b) {
+  return a < b;
+}
+
+function isDecreasing(a, b) {
+  return a > b;
+}
+
+
+// Do not edit the line below.
+exports.isMonotonic = isMonotonic;
