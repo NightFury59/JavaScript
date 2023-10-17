@@ -1,0 +1,17 @@
+// O(n) Time complexity | O(n) Space complexity.
+
+function missingNumbers(nums) {
+ const includeNums = new Set(nums);
+
+  const solution = [];
+  for (let num = 1; num < nums.length + 3; num++) {
+    if (!includeNums.has(num)) {
+      solution.push(num);
+    }
+  }
+
+  return solution;
+}
+
+// Do not edit the line below.
+exports.missingNumbers = missingNumbers;
