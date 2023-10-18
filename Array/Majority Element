@@ -1,0 +1,21 @@
+// O(n) time complexity | O(1) space complexity
+
+function majorityElement(array) {
+  let count = 0;
+  answer = null;
+
+  for (const value of array) {
+    if (count === 0) answer = value;
+
+    if (value === answer) {
+      count++;
+    } else {
+      count--;
+    }
+  }
+
+  return answer;
+}
+
+// Do not edit the line below.
+exports.majorityElement = majorityElement;
