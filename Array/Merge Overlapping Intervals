@@ -1,0 +1,22 @@
+function mergeOverlappingIntervals(array) {
+  array.sort((a, b) => a[0] - b[0]);
+
+  const mergedIntervals = [array[0]];
+  let mergedIntervalPointer = 0;
+  for (let index = 1; index < array.length; index++) {
+    const [start, end] = mergedIntervals[mergedIntervalPointer];
+    const [nextStart, nextEnd] = array[index];
+    const isOverlapping = end >= nextStart;
+    if (isOverlapping) {
+      const biggerEnd = Math.max(end, nextEnd);
+      mergedIntervals[mergedIntervalPointer] = [start, biggerEnd];
+    } else {
+      mergedIntervals.push(array[index]);
+      mergedIntervalPointer++;
+    }
+  }
+  return mergedIntervals;
+}
+
+// Do not edit the line below.
+exports.mergeOverlappingIntervals = mergeOverlappingIntervals;
