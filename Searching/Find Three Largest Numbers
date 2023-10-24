@@ -1,0 +1,26 @@
+function findThreeLargestNumbers(array) {
+  let num1 = -Infinity;
+  let num2 = -Infinity;
+  let num3 = -Infinity;
+  let temp
+
+  for (let num of array) {
+    if (num > num3) {
+      num3 = num
+      if (num3 > num2) {
+        temp = num2
+        num2 = num3
+        num3 = temp
+        if (num2 > num1) {
+          temp = num1
+          num1 = num2
+          num2 = temp
+        }
+      }
+    }
+  }
+  return [num3, num2, num1];
+}
+
+// Do not edit the line below.
+exports.findThreeLargestNumbers = findThreeLargestNumbers;
