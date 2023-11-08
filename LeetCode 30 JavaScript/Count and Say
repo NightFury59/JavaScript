@@ -1,0 +1,14 @@
+var countAndSay = function(n) {
+    if(n == 1) return "1"
+    let str = countAndSay(n-1)
+
+    let res = ""
+    let j = 0;
+    for(let i =0; i<str.length;i++){
+        while(str[i] == str[j]) j++
+
+        res += j-i +str[i]
+        i = j-1
+    }
+    return res;
+};
