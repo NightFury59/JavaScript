@@ -1,0 +1,70 @@
+Solution 1 - BRUTE FORCE APPROACH.
+
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+exports.LinkedList = LinkedList;
+
+//Time Complexity O(n + m) | Space Complexity O(n)
+function mergingLinkedLists(linkedListOne, linkedListTwo) {
+  const listOneNodes = new Set();
+  let currentNodeOne = linkedListOne;
+  while (currentNodeOne !== null) {
+    listOneNodes.add(currentNodeOne);
+    currentNodeOne = currentNodeOne.next
+  }
+
+  let currentNodeTwo = linkedListTwo;
+  while (currentNodeTwo !== null) {
+    if (listOneNodes.has(currentNodeTwo)) return currentNodeTwo;
+    currentNodeTwo = currentNodeTwo.next;
+  }
+
+  return null;
+}
+
+// Do not edit the line below.
+exports.mergingLinkedLists = mergingLinkedLists;
+
+
+
+** SOLUTION - 2 ** (Optimal)
+
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+exports.LinkedList = LinkedList;
+
+
+// Time Complexity O(n + m) | Space Complexity O(1)
+function mergingLinkedLists(linkedListOne, linkedListTwo) {
+  let currentNodeOne = linkedListOne;
+  let currentNodeTwo = linkedListTwo;
+
+  while (currentNodeOne !== currentNodeTwo) {
+    if (currentNodeOne === null) {
+      currentNodeOne = linkedListTwo;
+    } else {
+      currentNodeOne = currentNodeOne.next;
+    }
+
+    if (currentNodeTwo === null) {
+      currentNodeTwo = linkedListOne;
+    } else {
+      currentNodeTwo = currentNodeTwo.next;
+    }
+  }
+
+  return currentNodeOne;
+}
+
+// Do not edit the line below.
+exports.mergingLinkedLists = mergingLinkedLists;
