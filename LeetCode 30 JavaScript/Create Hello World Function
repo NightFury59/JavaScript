@@ -1,0 +1,21 @@
+// 1st Solution --
+
+const createHelloWorld = function() {
+    return function() {
+        return "Hello World";
+    }
+};
+
+createHelloWorld();
+
+// 2nd Solution --
+
+const createHelloWorld = function() {
+    return() => 'Hello World';
+}
+
+// 3rd Solution --
+
+const createHelloWorld = function() {
+    return(...args) => 'Hello World';
+}
