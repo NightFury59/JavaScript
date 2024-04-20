@@ -1,4 +1,4 @@
-/* Time Complexity O(n) | Space Complexity O(1) */
+Solution 1-
 
 var filter = function(arr, fn) {
     var filteredArr = [];
@@ -9,4 +9,18 @@ var filter = function(arr, fn) {
     }
 
     return filteredArr;
+};
+
+
+Solution 2 -
+
+var filter = function(arr, fn) {
+    const res = [];
+
+    for (const i in arr) {
+        if (fn(arr[i], Number(i))) {
+            res.push(arr[i]);
+        }
+    }
+    return res
 };
