@@ -1,18 +1,9 @@
-/* 1.Using a for loop with operational container*/
-
 var map = function(arr, fn) {
-    const transformedArr = []
-    for (let i = 0; i < arr.length; i++) {
-      transformedArr[i] = fn(arr[i], i)
+    const res = [];
+
+    for (const i in arr) {
+        res.push(fn(arr[i], Number(i)))
     }
-    return transformedArr;
-};
 
-/* 2.Using a for loop without any container a.k.a Inmemory transformations*/
-
-var map = function(arr, fn) {
-  for (i = 0; i < arr.length; i++){
-    arr[i] = fn(arr[i], i)
-  }
-  return arr;
+    return res
 };
