@@ -1,6 +1,16 @@
-function createCounter(start) {
-  let count = start;
-  return function() {
-    return count++;
-  }
-}
+// Solution 1 - By using Closures -
+
+var createCounter = function(n) {
+    return function() {
+        return n++;
+    };
+};
+
+// Solution 2 -
+
+var createCounter = function(n) {
+    let count = n;
+    return function() {
+        return count++;
+    };
+};
