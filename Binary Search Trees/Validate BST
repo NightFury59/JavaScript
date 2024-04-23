@@ -18,6 +18,4 @@ function validateBstHelper(tree, minValue, maxValue) {
   return leftIsValid && validateBstHelper(tree.right, tree.value, maxValue);
 }
 
-// Do not edit the line below.
-exports.BST = BST;
-exports.validateBst = validateBst;
+
